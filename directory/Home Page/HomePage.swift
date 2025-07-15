@@ -20,7 +20,8 @@ let services: [Service] = [
     .init(name: "DA Office Contacts", iconName: "person.2.fill", color: .indigo),
     .init(name: "SAP Travel Info", iconName: "airplane", color: .green),
     .init(name: "License Search", iconName: "person.text.rectangle.fill", color: .pink),
-    .init(name: "Privacy Policy", iconName: "lock.shield.fill", color: .gray)
+    .init(name: "Privacy Policy", iconName: "lock.shield.fill", color: .gray),
+    .init(name: "Registration List", iconName: "person.crop.rectangle.stack.fill", color: .yellow)
 ]
 
 struct HomePageView: View {
@@ -137,10 +138,22 @@ struct ServiceTile: View {
             FDASearchView()
         case "510(k)":
             UnifiedSearchView()
+        case "DA Office Contacts":
+            DAContentView()
+        case "Privacy Policy":
+            PrivacyPoliciesView()
+        case "Historical Docs":
+            HistContentView()
         case "CDPH Device Recall Search":
             SearchDBView()
         case "MAUDE":
             MaudeSearchView()
+        case "FDA Warning Letters":
+            WarningLetterSearchView()
+        case "Registration List":
+            RegListContentView()
+        case "SAP Travel Info":
+            SAPTravelInfoView()
         default:
             Text("Placeholder view for \(service.name)")
                 .navigationTitle(service.name)

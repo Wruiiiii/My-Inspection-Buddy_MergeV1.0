@@ -4,6 +4,7 @@
 //
 //  Created by Tanay Doppalapudi on 6/17/25.
 //
+
 import Foundation
 
 struct Contact: Identifiable, Codable {
@@ -14,6 +15,15 @@ struct Contact: Identifiable, Codable {
     let phone: String
     let fax: String
     let website: String
+
+    // Computed properties to help with filtering
+    var firstName: String {
+        return name.components(separatedBy: " ").first ?? ""
+    }
+
+    var lastName: String {
+        return name.components(separatedBy: " ").last ?? ""
+    }
 
     enum CodingKeys: String, CodingKey {
         case county = "County"

@@ -1,7 +1,5 @@
-
 import Foundation
 import Combine
-
 
 class FDARecallService {
     
@@ -14,26 +12,16 @@ class FDARecallService {
         return formatter
     }()
     
-    func searchRecalls(firm: String?, number: String?, classification: String?, fromDate: Date?, toDate: Date?) -> AnyPublisher<[Recall], APIError> {
+    func searchRecalls(firm: String?, number: String?, classification: String?, fromDate: Date?, toDate: Date?) -> AnyPublisher<[FDAEnforcementRecord], APIError> {
         
         guard var components = URLComponents(string: baseURLString) else {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         
         var searchTerms: [String] = []
-        
-        if let firm = firm, !firm.trimmingCharacters(in: .whitespaces).isEmpty {
-            searchTerms.append("recalling_firm:\"\(firm)\"")
-        }
-        
-        if let number = number, !number.trimmingCharacters(in: .whitespaces).isEmpty {
-            searchTerms.append("recall_number:\"\(number)\"")
-        }
-        
-        if let classification = classification, classification != "Any" {
-            searchTerms.append("classification:\"\(classification)\"")
-        }
-        
+        if let firm = firm, !firm.trimmingCharacters(in: .whitespaces).isEmpty { searchTerms.append("recalling_firm:\"\(firm)\"") }
+        if let number = number, !number.trimmingCharacters(in: .whitespaces).isEmpty { searchTerms.append("recall_number:\"\(number)\"") }
+        if let classification = classification, classification != "Any" { searchTerms.append("classification:\"\(classification)\"") }
         if let fromDate = fromDate, let toDate = toDate {
             let fromDateString = dateFormatter.string(from: fromDate)
             let toDateString = dateFormatter.string(from: toDate)
@@ -41,13 +29,11 @@ class FDARecallService {
         }
         
         guard !searchTerms.isEmpty else {
-            return Fail(error: APIError.noResults).eraseToAnyPublisher()
+            return Fail(error: APIError.apiError("Please provide at least one search criterion.")).eraseToAnyPublisher()
         }
         
-        let searchQuery = searchTerms.joined(separator: " AND ")
-        
         components.queryItems = [
-            URLQueryItem(name: "search", value: searchQuery),
+            URLQueryItem(name: "search", value: searchTerms.joined(separator: " AND ")),
             URLQueryItem(name: "limit", value: "100")
         ]
         
@@ -55,20 +41,22 @@ class FDARecallService {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         
-        print("Requesting URL: \(url)")
-        
         return URLSession.shared.dataTaskPublisher(for: url)
-            .mapError { error in
-                print("Network request failed with error: \(error)")
-                return APIError.requestFailed(error)
-            }
             .map(\.data)
-            .decode(type: RecallAPIResponse.self, decoder: JSONDecoder())
-            .mapError { error in
-                print("JSON decoding failed with error: \(error)")
-                return APIError.decodingFailed(error)
+            // The JSON is decoded into the same response type
+            .decode(type: FDAEnforcementResponse.self, decoder: JSONDecoder())
+            .tryMap { response in
+                // Check if the API returned a specific error message
+                if let apiError = response.error {
+                    // Use the message from the renamed FDAErrorPayload
+                    throw APIError.apiError(apiError.message)
+                }
+                return response.results ?? []
             }
-            .map(\.results)
+            .mapError { error in
+                return error as? APIError ?? APIError.decodingFailed(error)
+            }
             .eraseToAnyPublisher()
     }
 }
+

@@ -4,14 +4,35 @@
 //
 //  Created by Tanay Doppalapudi on 6/17/25.
 //
+
 import Foundation
+import Combine
 
 class ContactViewModel: ObservableObject {
     @Published var contacts: [Contact] = []
+    @Published var searchName: String = ""
+    @Published var searchCounty: String = ""
+
+    // Filtered result based on both fields
+    var filteredContacts: [Contact] {
+        contacts.filter { contact in
+            let matchesName = searchName.isEmpty ||
+                contact.firstName.localizedCaseInsensitiveContains(searchName) ||
+                contact.lastName.localizedCaseInsensitiveContains(searchName)
+
+            let matchesCounty = searchCounty.isEmpty ||
+                contact.county.localizedCaseInsensitiveContains(searchCounty)
+
+            return matchesName && matchesCounty
+        }
+    }
 
     func fetchContacts() {
-        guard let url = URL(string: "https://dacontactsapi-1.onrender.com/contacts") else {
+//  "https://dacontactsapi-1.onrender.com/contacts") else {
+//            print("Invalid URL")
+            guard let url = URL(string: "https://inspectionbuddy-api.onrender.com/contacts") else { //new api
             print("Invalid URL")
+                
             return
         }
 

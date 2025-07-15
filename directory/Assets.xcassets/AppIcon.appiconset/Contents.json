@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "appstore.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -26,6 +27,35 @@
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
+    },
+    {
+      "filename" : "100.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "80.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
+    },
+    {
+      "filename" : "144.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
+    },
+    {
+      "filename" : "152.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
+    },
+    {
+      "filename" : "167.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
     }
   ],
   "info" : {

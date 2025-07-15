@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20240916T230000Z
+DTEND:20240919T180000Z
+DTSTAMP:20240916T230000Z
+LOCATION:
+SUMMARY:Concur Travel Itinerary
+DESCRIPTION:Trip Overview\n~~~~~~~~~~~~~\n\nTrip Name: Hotel R
+ eservation at 3030 KENNETH ST\, SANTA CLARA\, CA 950
+ 54\, USA \nStart Date: September 16\, 2024 \nEnd Dat
+ e: September 19\, 2024 \nCreated: September 13\, 202
+ 4\, Argus Sun (Modified: September 13\, 2024) \nDesc
+ ription: (No Description Available) \nI agree to t
+ he Terms of Use and have read and will comply with
+  State of CA travel and expense policy: Yes \nAgen
+ cy Record Locator: 8ZFG83 \nReservation for: Argus
+  M Sun \nTotal Estimated Cost: $ 637.71 USD \nAgen
+ cy Name: CI Azumano - 37QB - California \n\nReserv
+ ations\n~~~~~~~~~~~~\nMonday\, September 16\, 2024\n
+ --------------------------\n\nSonesta Silicon Vall
+ ey\n``````````````````````\n\n1820 Barber Lane \nM
+ ilpitas\, California\, 95035 \nUS \n408-943-9080\n\n
+ Checking In: Mon Sep 16\n16:00 \nRoom  1\, Days  3\,
+  Guests  1 \nChecking Out: Thu Sep 19\n11:00 \nCon
+ firmation: 75372SE120193 \nStatus: Confirmed \nFre
+ quent Guest Number: 143451746\nDaily Rate: $ 186.1
+ 5 USD \nTotal Rate: $ 637.71 USD \nRoom Details   
+  \nRoom Description: RoomDescriptionCodeA2QGOV    
+ \nSpecial Instructions: Nonsmoking   \n\nCancellat
+ ion Policy \n\nCxl: Cxl 1800 Htl Time On 15Sep24-F
+ ee 1 Night-Incl Tax-Fees Cancel By 6Pm On The Day 
+ Before Arrival To Avoid Fee Equal To 1 Nights Room
+  Rate Plus Tax. \nRemarks    \nSN65028ARR16SEP CXL
+ :CXL 1800 HTL TIME ON 15SEP24 \nFEE 1 NIGHT \nINCL
+  \n\nTotal Estimated Cost\n~~~~~~~~~~~~~~~~~~~~\n
+ \nHotel:   $ 637.71 USD \nTotal Estimated Cost:   $
+  637.71 USD \n\nRemarks\n~~~~~~~\nBILLB INDEX - 56
+ 21 \nBILLB PCA - 26225 \n\n
+UID:8ZFG83-2024-09-16T23:00:00.000Z-2024-09-19T18:00:00.000Z@concursolutions.com
+PRIORITY:3
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT180M
+REPEAT:2
+DURATION:PT60M
+ACTION:DISPLAY
+DESCRIPTION: Created By SAP Concur Travel
+END:VALARM
+END:VEVENT
+END:VCALENDAR
