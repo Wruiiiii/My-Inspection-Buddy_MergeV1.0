@@ -30,24 +30,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		213D39212E1F21800075F315 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"CDPHrecalldb/Users/wang/Desktop/iOS Dev Apps/My Inspection Buddy_MergeV1.0/My Inspection Buddy_2025/CDPHrecalldb/PythonKit",
-				"CDPHrecalldb/Users/wang/Desktop/iOS Dev Apps/My Inspection Buddy_MergeV1.0/My Inspection Buddy_2025/CDPHrecalldb/SQLite.swift",
-				"CDPHrecalldb/Users/wang/Desktop/iOS Dev Apps/My Inspection Buddy_MergeV1.0/My Inspection Buddy_2025/CDPHrecalldb/swift-toolchain-sqlite",
-				"CDPHrecalldb/Users/wang/Desktop/iOS Dev Apps/My Inspection Buddy_MergeV1.0/My Inspection Buddy_2025/CDPHrecalldb/SwiftSoup",
-			);
-			target = 214335632E091740004A1A09 /* My Inspection Buddy_MergeV1.0 */;
-		};
 		214335CB2E0D9689004A1A09 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0Tests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				DAOfficeContacts/Contact.swift,
-				DAOfficeContacts/ContactDetailView.swift,
-				DAOfficeContacts/ContactViewModel.swift,
-				DAOfficeContacts/ContentView.swift,
-				DAOfficeContacts/DAContactsAppApp.swift,
 				Info.plist.plist,
 			);
 			target = 214335702E091742004A1A09 /* My Inspection Buddy_MergeV1.0Tests */;
@@ -55,11 +40,6 @@
 		214335CC2E0D9689004A1A09 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0UITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				DAOfficeContacts/Contact.swift,
-				DAOfficeContacts/ContactDetailView.swift,
-				DAOfficeContacts/ContactViewModel.swift,
-				DAOfficeContacts/ContentView.swift,
-				DAOfficeContacts/DAContactsAppApp.swift,
 				Info.plist.plist,
 			);
 			target = 2143357A2E091742004A1A09 /* My Inspection Buddy_MergeV1.0UITests */;
@@ -70,7 +50,6 @@
 		214335662E091740004A1A09 /* My Inspection Buddy_2025 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				213D39212E1F21800075F315 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0" target */,
 				214335CB2E0D9689004A1A09 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0Tests" target */,
 				214335CC2E0D9689004A1A09 /* Exceptions for "My Inspection Buddy_2025" folder in "My Inspection Buddy_MergeV1.0UITests" target */,
 			);
@@ -437,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PWLBFCSU3J;
@@ -453,7 +433,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ruiwang.My-Inspection-Buddy-2025";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiwang.MyInspectionBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PWLBFCSU3J;
@@ -482,7 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ruiwang.My-Inspection-Buddy-2025";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiwang.MyInspectionBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
